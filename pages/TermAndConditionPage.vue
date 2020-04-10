@@ -124,10 +124,14 @@
         </li>
       </ul>
     </ol> <br>
+    <nuxt-link to="/AdditionalSecurityVerification">
     <button type="button" class="btn btn-success"
             style = "width: 100%; max-width: 250px; padding: 12px; margin: auto;">ACCEPT</button>
+    </nuxt-link>
+    <nuxt-link to="/UserClickCancel">
     <button type="button" class="btn btn-danger"
             style = "width: 100%; max-width: 250px; padding: 12px; margin: auto;">DECLINE</button>
+    </nuxt-link>
 
   </div>
 </template>

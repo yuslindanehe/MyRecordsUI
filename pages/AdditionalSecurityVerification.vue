@@ -12,8 +12,12 @@
     </ol> <br>
 
     <div class= "h5" style = "color: blue">How do you like to receive the code?</div>
+    <nuxt-link to="/ContinuationAdditionalSecurityVerification">
     <button type="button" class="btn btn-primary btn-sm">SEND TO MY EMAIL</button>
+    </nuxt-link>
+    <nuxt-link to="/ContinuationAdditionalSecurityVerification">
     <button type="button" class="btn btn-secondary btn-sm">SEND A TEXT TO MY CELLPHONE</button>
+    </nuxt-link>
   </div>
 </template>
 
