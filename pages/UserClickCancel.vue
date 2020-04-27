@@ -1,7 +1,7 @@
 <template>
   <div class = "container">
     <div class="alert alert-danger" role="alert">
-      YOUR ACCESS DENIED
+      YOUR ACCESS HAS BEEN DENIED
     </div>
 </div>
 </template>
