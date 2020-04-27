@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class=pb-3>Sign Up Page</h3>
     <p>
-      Please fill these information below and click submit when you finish.
+      Please fill out the form below and click "submit" when you are finished.
     </p>
     <form>
       <div class="form-group">
