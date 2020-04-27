@@ -11,10 +11,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="MainPage">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Test Results</a>
+            <a class="nav-link" href="TestResult">Test Results</a>
           </li>
           <!--      <li class="nav-item">-->
           <!--        <a class="nav-link" href="#">Messages</a>-->
@@ -23,7 +23,7 @@
           <!--        <a class="nav-link" href="#">Appoitmments</a>-->
           <!--      </li>-->
           <li class="nav-item">
-            <a class="nav-link" href="#">Medications</a>
+            <a class="nav-link" href="Medication">Medications</a>
           </li>
           <!--	  <li class="nav-item">-->
           <!--        <a class="nav-link" href="#">To Do</a>-->
