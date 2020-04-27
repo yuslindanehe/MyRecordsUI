@@ -27,10 +27,10 @@
         <li>Electronic Messaging</li>
         <ul class="list-unstyled">
           <li>
-            Myrecords should never be used for emergencies or urgent matters. The anticipated turnaround time for
+            MyRecords should never be used for emergencies or urgent matters. The anticipated turnaround time for
             responses to electronic messages is 1-3 business days. All urgent medical matters should be reported
             immediately to your physician’s office by phone, or by going to an emergency room or dialing 911. Please
-            note that messages you send through Myrecords may be viewed by other health professionals and other who work
+            note that messages you send through MyRecords may be viewed by other health professionals and other who work
             with your physician
           </li>
         </ul>
@@ -56,22 +56,22 @@
         <li>Minor Eligibility</li>
         <ul class="list-unstyled">
           <li>
-            Minor children between the ages of 12 and 17 (inclusive) will not be eligible to participate in MyResults
+            Minor children between the ages of 12 and 17 (inclusive) will not be eligible to participate in MyRecords
             services unless emancipated. <br>
             A parent or legal guardian of a minor child up to the child's 12th birthday may request proxy access to
-            their child's MyResults account by completing a Proxy Access Form. Under State and Federal law there are
+            their child's MyRecords account by completing a Proxy Access Form. Under State and Federal law there are
             certain types of medical information that the parent or guardian of a minor patient age 12 or older may
             not view without the consent of the minor patient. Because of these requirements, we will not offer
-            MyResults proxy access to parents of minor patients after his or her 12th birthday.
+            MyRecords proxy access to parents of minor patients after his or her 12th birthday.
           </li>
         </ul>
         <li>Proxy Access</li>
         <ul class="list-unstyled">
           <li>
-            Individuals 18 years of age or older may request proxy access to another individual's MyResults account
+            Individuals 18 years of age or older may request proxy access to another individual's MyRecords account
             only to the extent that the party requesting proxy access can demonstrate the legal right to the account
             holder's medical information. Access can be requested by completing the Proxy Access Form and submitting
-            it to hospitals needed. Only one person will be granted proxy access to a MyResults account. A MyResults
+            it to hospitals needed. Only one person will be granted proxy access to a MyRecords account. A MyRecords
             account will be activated for both the proxy and the account holder. If the proxy's legal relationship
             with the account holder changes, the proxy must immediately cease access and notify hospitals related by
             calling the clinic directly.
@@ -87,8 +87,8 @@
           site content may or may not apply to you. <br>
           You may be accessing your own medical information via this site and may wish to communicate with one of your
           health care providers about that or related information. If you have an emergency, or think you need to speak
-          to someone urgently, DO NOT use the email communication options provided to you by MyResults. Neither
-          MyResults nor any other application available through this site is a substitute for appropriate and timely
+          to someone urgently, DO NOT use the email communication options provided to you by MyRecords. Neither
+          MyRecords nor any other application available through this site is a substitute for appropriate and timely
           contact with your physician. This site is not a substitute for consultation with your physician. You should
           never change or stop any course of treatment prescribed by your physician without first consulting the
           physician.
@@ -97,8 +97,8 @@
       <li>Termination of Access</li>
       <ul class="list-unstyled">
         <li>
-          MyResults as a convenience to the patient. Access to MyResults should not to be considered a right. At its
-          sole discretion, Health providers may restrict or terminate access to MyResults at any time or for any reason.
+          MyRecords as a convenience to the patient. Access to MyRecords should not to be considered a right. At its
+          sole discretion, Health providers may restrict or terminate access to MyRecords at any time or for any reason.
         </li>
       </ul> <br>
       <li>Restrictions on Use and Ownership</li>
@@ -114,9 +114,9 @@
       <li>Appropriate Use</li>
       <ul class="list-unstyled">
         <li>
-          Access to the MyResults System is a convenience granted to users for the purpose furthering their medical
+          Access to the MyRecords System is a convenience granted to users for the purpose furthering their medical
           care. Improper use of the system unrelated to this activity may result in suspension or termination from
-          MyResults at the sole discretion of the host sites. Improper activities include, but are not limited to: <br>
+          MyRecords at the sole discretion of the host sites. Improper activities include, but are not limited to: <br>
 
           Inappropriate or abusive language. <br>
           Reserving appointment times that are not needed or are frequently cancelled.<br>
