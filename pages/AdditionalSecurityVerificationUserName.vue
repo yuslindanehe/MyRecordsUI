@@ -1,11 +1,10 @@
 <template>
   <div class="container">
     <h3 class=pb-3>Continuation Additional Security Verification</h3>
-    <p>It is our goal to make sure your health information is safe and secure. <b></b>
-      Before you log in, you'll need to enter a one-time use security code to verify your identity.
+    <p>
       It is our goal to make sure your health information is safe and secure. Before you log in, you'll need to enter a
       one-time use security code to verify your identity.
-      MyChart has sent you a code to your email.
+      MyRecords has sent you a code to your email.
     <p>
 
     <p>Enter that code here to verify your identity. </p>
