@@ -1,13 +1,18 @@
 <template>
-    <div>
-      Hello
-    </div>
+  <div class="container">
+    Hello
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'MainPage'
+import { mapGetters } from 'vuex'
+
+export default {
+  name: 'MainPage',
+  computed: {
+    ...mapGetters(['isAuthenticated', 'loggedInUser'])
   }
+}
 </script>
 
 <style scoped>
