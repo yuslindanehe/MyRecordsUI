@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -34,7 +35,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    //'@nuxtjs/eslint-module'
+    // '@nuxtjs/eslint-module'
   ],
   /*
   ** Nuxt.js modules
@@ -43,13 +44,37 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/auth'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: process.env.BACKEND_URL
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post', propertyName: 'access_token' },
+          logout: false,
+          user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+        },
+        // tokenRequired: true,
+        tokenType: 'bearer'
+        // autoFetchUser: true
+      }
+    },
+    watchLoggedIn: true,
+    redirect: {
+      login: '/',
+      logout: '/',
+      // callback: '/login',
+      home: '/inputStaff'
+    }
   },
   /*
   ** Build configuration
@@ -60,5 +85,8 @@ export default {
     */
     extend (config, ctx) {
     }
+  },
+  router: {
+    middleware: ['auth']
   }
 }

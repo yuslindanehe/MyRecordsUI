@@ -1,73 +1,57 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        MyRecordsUI
-      </h1>
-      <h2 class="subtitle">
-        My sweet Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <h1 class="text-center">
+      Login
+    </h1>
+    <form style="width: 100%; max-width: 330px; padding: 15px; margin: auto;" @submit.prevent="userLogin">
+      <div class="form-group">
+        <input id="email" v-model="login.email" placeholder="username" class="form-control" type="text">
       </div>
+
+      <div class="form-group">
+        <input id="password" v-model="login.password" placeholder="password" class="form-control" type="password">
+      </div>
+      <button type="submit" class="btn-block btn-primary btn">
+        login
+      </button>
+    </form>
+    <br>
+    <div class="text-center">
+      <nuxt-link to="/forgotPassword">
+        Forgot Password or UserName
+      </nuxt-link>
     </div>
+    <div class="text-center">
+      Do not have an account?
+    </div>
+    <nuxt-link to="/SignUpForm">
+      <button class="btn btn-block btn-link">
+        SIGN UP NOW
+      </button>
+    </nuxt-link>
   </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
   layout: 'preLogin',
-  components: {
-    Logo
+  data () {
+    return {
+      login: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    async userLogin () {
+      await this.$auth.loginWith('local', { data: this.login })
+      // await this.$router.push({
+      //   path: '/MainPage'
+      // })
+      // alert('fsdf')
+      // this.$auth.redirect('MainPage')
+      this.$router.push('/MainPage')
+    }
   }
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

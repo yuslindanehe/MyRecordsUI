@@ -4,7 +4,7 @@
       Visit Form
     </h3>
     <p>
-      This form fill by staff only
+      This form is to be filled out by staff only.
     </p>
     <form>
       <div class="form-group">
