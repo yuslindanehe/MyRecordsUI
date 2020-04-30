@@ -8,7 +8,7 @@
     <ol>
       <li>We'll send you a code. This might take a few minutes.</li>
       <li>When you receive the code, enter it on this page below.</li>
-      <li>After we verify your identity, you will be logged in to MyChart.</li>
+      <li>After we verify your identity, you will be logged in to MyRecords.</li>
     </ol> <br>
 
     <div class= "h5" style = "color: blue">How do you like to receive the code?</div>

@@ -6,7 +6,8 @@
   </div>
 </template>
 <script>
-  export default {
-    layout: 'preLogin'
-  }
+export default {
+  layout: 'preLogin',
+  auth: false
+}
 </script>
