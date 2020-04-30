@@ -2,7 +2,7 @@
   <div class="container">
     <h3 class=pb-3>Input Patient's Information</h3>
     <p>
-      This form fill by staff only
+      This form is to be filled out by staff only.
     </p>
     <form>
       <div class="form-group">
