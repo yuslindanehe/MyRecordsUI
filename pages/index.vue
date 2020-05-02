@@ -45,12 +45,7 @@ export default {
   methods: {
     async userLogin () {
       await this.$auth.loginWith('local', { data: this.login })
-      // await this.$router.push({
-      //   path: '/MainPage'
-      // })
-      // alert('fsdf')
-      // this.$auth.redirect('MainPage')
-      this.$router.push('/MainPage')
+      this.$router.push('/authentication2FA')
     }
   }
 }

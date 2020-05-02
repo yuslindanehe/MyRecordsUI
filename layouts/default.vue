@@ -20,13 +20,20 @@
             <a class="nav-link" href="/MainPage">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <nuxt-link to="/TestResult" class="nav-link">Test Results</nuxt-link>
+            <nuxt-link to="/TestResult" class="nav-link">
+              Test Results
+            </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link to="/Medication" class="nav-link">Medications</nuxt-link>
+            <nuxt-link to="/Medication" class="nav-link">
+              Medications
+            </nuxt-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Health Summary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" @click="logout">Logout</a>
           </li>
         </ul>
       </div>
@@ -59,3 +66,13 @@
     />
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    async logout () {
+      await this.$auth.logout()
+    }
+  }
+}
+</script>

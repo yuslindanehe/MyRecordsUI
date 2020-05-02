@@ -73,7 +73,7 @@ export default {
       login: '/',
       logout: '/',
       // callback: '/login',
-      home: '/inputStaff'
+      home: '/MainPage'
     }
   },
   /*

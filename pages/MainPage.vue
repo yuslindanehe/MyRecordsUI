@@ -9,6 +9,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'MainPage',
+  middleware: ['authenticated2fa'],
   computed: {
     ...mapGetters(['isAuthenticated', 'loggedInUser'])
   }
