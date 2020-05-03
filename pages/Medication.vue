@@ -1,44 +1,17 @@
 <template>
-  <div class="container">
-    <h3 class=pb-3>Medication Form</h3>
-    <p>
-      This form is to be filled out by staff only.
-    </p>
-    <form>
-      <div class="form-group">
-        <label for="InputMedicationName">Medication Name</label>
-        <input type="text" class="form-control" id="MedicationName" aria-describedby="MedicationName">
-      </div>
-      <div class="form-group">
-        <label for="InputPersriptionDate">Perscription Date</label>
-        <input type="date" class="form-control" id="PersscriptionDate" aria-describedby="PerscribtionDate">
-      </div>
-      <div class="form-group">
-        <label for="InputRefilOrNot">Refil or Not</label>
-        <input type="Boolean" class="form-control" id="RefilOrNot" aria-describedby="RefilOrNot">
-      </div>
-      <div class="form-group">
-        <label for="InputMedicationQuantity">Medication Quantity</label>
-        <input type="text" class="form-control" id="MedictionQuantity" aria-describedby="MedicationQuantity">
-      </div>
-      <div class="form-group">
-        <label for="InputInstruction">Instruction</label>
-        <input type="text" class="form-control" id="MedicationName" aria-describedby="MedicationName">
-      </div>
-      <div class="form-group">
-        <label for="InputPerscribedby">Perscribed by</label>
-        <input type="text" class="form-control" id="Perscribedby" aria-describedby="Perscribedby">
-      </div>
-    </form>
+  <div>
+    <b-table striped hover :items="items"></b-table>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Medication'
+    data() {
+      return {
+        items: [
+          { Prescription_Date : 'wire with DB', Medication_Name : '#Wire with DB', Refil_or_Not : '#Wire with DB', Medication_Quantity: '#Wire with DB', Instruction : 'wire with DB', Prescribe_by : 'wire with DB' },
+        ]
+      }
+    }
   }
 </script>
-
-<style scoped>
-
-</style>
