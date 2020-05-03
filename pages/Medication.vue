@@ -6,12 +6,15 @@
 
 <script>
   export default {
-    data() {
-      return {
-        items: [
-          { Prescription_Date : 'wire with DB', Medication_Name : '#Wire with DB', Refil_or_Not : '#Wire with DB', Medication_Quantity: '#Wire with DB', Instruction : 'wire with DB', Prescribe_by : 'wire with DB' },
-        ]
-      }
+    // data() {
+      // return {
+      //   items: [
+      //     { Prescription_Date : 'wire with DB', Medication_Name : '#Wire with DB', Refil_or_Not : '#Wire with DB', Medication_Quantity: '#Wire with DB', Instruction : 'wire with DB', Prescribe_by : 'wire with DB' },
+      //   ]
+      // }
+    // },
+    async asyncData ({ $axios }) {
+      return { items: await $axios.$get(`api/medication/patient` )}
     }
   }
 </script>
