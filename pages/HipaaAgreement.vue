@@ -196,7 +196,8 @@
 
 <script>
 export default {
-  name: 'Hipaaagreement'
+  name: 'Hipaaagreement',
+  layout: 'preLogin'
 }
 </script>
 

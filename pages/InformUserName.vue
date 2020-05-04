@@ -12,7 +12,8 @@
 
 <script>
   export default {
-    name: 'AdditionalSecurityVerification'
+    name: 'AdditionalSecurityVerification',
+    layout: 'preLogin'
   }
 </script>
 
