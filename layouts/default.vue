@@ -17,7 +17,7 @@
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href=/MainPage>Home <span class="sr-only">(current)</span></a>
+            <nuxt-link class="nav-link" to=/MainPage>Home <span class="sr-only">(current)</span></nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link to="/TestResult" class="nav-link">
@@ -30,10 +30,10 @@
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Health Summary</a>
+            <nuxt-link class="nav-link" to="/HealthSummary">Health Summary</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="logout">Logout</a>
+            <span class="nav-link" @click="logout">Logout</span>
           </li>
         </ul>
       </div>

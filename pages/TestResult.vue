@@ -6,12 +6,8 @@
 
 <script>
   export default {
-    data() {
-      return {
-        items: [
-          { Test_Date: '#Wire with DB', Test_Name: '#Wire with DB', Detail_Test_Result: '#Wire with DB' },
-                  ]
-      }
+    async asyncData ({ $axios }) {
+      return { items: await $axios.$get(`api/test-result/patient` )}
     }
   }
 </script>

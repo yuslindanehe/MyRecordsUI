@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <form>
+    <form @submit.prevent="authenticateCode">
       <div class="form-group">
         <label for="twoFACode">Please enter the code that you got on your phone:</label>
         <input v-model="code" type="text" class="form-control" id="twoFACode">
       </div>
-      <button type="button" class="btn btn-primary" @click="authenticateCode()">Submit</button>
+      <button type="submit" class="btn btn-primary" @click="authenticateCode()">Submit</button>
       <button type="button" class="btn btn-primary" @click="sendCode()">Send the code again</button>
     </form>
   </div>

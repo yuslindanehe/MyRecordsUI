@@ -4,7 +4,7 @@
     <p>
       This form fill by staff only
     </p>
-    <form>
+    <form @submit.prevent="storeTestResult">
       <div class="form-group">
         <label for="inputPatientName">Patient's Name</label>
         <b-form-select
@@ -15,26 +15,27 @@
         ></b-form-select>
       </div>
       <div class="form-group">
-        <label for="InputLastName">Last Name</label>
-        <input type="text" class="form-control" id="LastName" aria-describedby="LastName">
-      </div>
-      <div class="form-group">
-        <label for="InputDOB">Date of Birth</label>
-        <input type="date" class="form-control" id="DOB" aria-describedby="DOB">
+        <label>Ordered By</label>
+        <b-form-select
+          id="inputStaffName"
+          v-model="form.orderedBy"
+          :options="staffs"
+          required
+        ></b-form-select>
       </div>
       <div class="form-group">
         <label for="InputTestDate">Test Date</label>
-        <input type="date" class="form-control" id="InputTestDate" aria-describedby="DOB">
+        <input v-model="form.testDate" type="date" class="form-control" id="InputTestDate" aria-describedby="DOB">
       </div>
       <div class="form-group">
         <label for="InputTestName">Test Name</label>
-        <input type="text" class="form-control" id="InputTestName" aria-describedby="TestName">
+        <input v-model="form.testName" type="text" class="form-control" id="InputTestName" aria-describedby="TestName">
       </div>
       <div class="form-group">
         <label for="InputTestResult">Detail Test Result</label>
-        <textarea class="form-control" id="InputTestResult" rows="8"></textarea>
+        <textarea v-model="form.testResult" class="form-control" id="InputTestResult" rows="8"></textarea>
       </div>
-      <button type="button" class="btn btn-primary">SUBMIT</button>
+      <button type="submit" class="btn btn-primary">SUBMIT</button>
     </form>
   </div>
 </template>
@@ -44,11 +45,51 @@
     name: 'Medication',
     data() {
       return {
-
         form: {
           patientName: '',
+          dob: '',
+          testDate: '',
+          testName: '',
+          testResult: '',
         },
-        patientName: [{ text: 'Yuslinda Nehe', value: 0 }, { text: 'Jimmy Ang', value: 2},{ text: 'John Young', value: 3}, { text: 'Ryan Tjai', value: 4}, { text: 'Lisna Nehe', value: 5}]
+      }
+    },
+    async asyncData ({ $axios }) {
+      const patients = await $axios.$get(`api/patients`);
+      let data = []
+      patients.forEach((patient) => {
+         data.push({text: patient.firstName + " " + patient.lastName, value: patient.id})
+      })
+
+      const staff = await $axios.$get(`api/staffs`)
+      let staffData = []
+      staff.forEach((row) => {
+        staffData.push({text: row.firstName + " " + row.lastName, value: row.id})
+      })
+
+      return {
+        patientName : data,
+        staffs : staffData
+      };
+    },
+    methods: {
+      async storeTestResult () {
+        await this.$axios.$post(`api/test-result`, {
+          patientId : this.form.patientName,
+          testDate : this.form.testDate,
+          testName : this.form.testName,
+          testResult : this.form.testResult,
+          orderedBy : this.form.orderedBy
+        }).then((response) => {
+          alert('Thank you, Data is saved successfully')
+          this.form.patientName = ''
+          this.form.testDate = ''
+          this.form.testName = ''
+          this.form.testResult = ''
+          this.form.orderedBy = ''
+        }).catch((response) => {
+          alert(response)
+        })
       }
     }
   }
