@@ -4,7 +4,7 @@
     <p>
       This form fill by staff only
     </p>
-    <form>
+    <form @submit.prevent="storeHealthInformation">
       <div class="form-group">
         <label for="inputPatientName">Patient's Name</label>
         <b-form-select
@@ -15,34 +15,26 @@
         ></b-form-select>
       </div>
       <div class="form-group">
-        <label for="InputLastName">Last Name</label>
-        <input type="text" class="form-control" id="LastName" aria-describedby="LastName">
-      </div>
-      <div class="form-group">
-        <label for="InputDOB">Date of Birth</label>
-        <input type="date" class="form-control" id="DOB" aria-describedby="DOB">
-      </div>
-      <div class="form-group">
         <label for="InputHeight">Patient Height</label>
-        <input type="text" class="form-control" id="InputHeight" aria-describedby="InputHeigh">
+        <input type="text" v-model="form.height" class="form-control" id="InputHeight" aria-describedby="InputHeigh">
       </div>
       <div class="form-group">
         <label for="InputWeight">Patient Weight</label>
-        <input type="text" class="form-control" id="InputWeight" aria-describedby="InputWeight">
+        <input type="text" v-model="form.weight" class="form-control" id="InputWeight" aria-describedby="InputWeight">
       </div>
       <div class="form-group">
         <label for="InputAllergies">Detail Allergies</label>
-        <textarea class="form-control" id="InputAllergies" rows="3"></textarea>
+        <textarea class="form-control" v-model="form.allergies" id="InputAllergies" rows="3"></textarea>
       </div>
       <div class="form-group">
         <label for="InputImunizationHistory">Imunization History</label>
-        <textarea class="form-control" id="InputImunizationHistory" rows="3"></textarea>
+        <textarea class="form-control" v-model="form.immunizationHistory" id="InputImunizationHistory" rows="3"></textarea>
       </div>
       <div class="form-group">
         <label for="InputIIlnessHistory">Ilness History</label>
-        <textarea class="form-control" id="InputIIlnessHistory" rows="3"></textarea>
+        <textarea class="form-control" v-model="form.illnessHistory" id="InputIIlnessHistory" rows="3"></textarea>
       </div>
-      <button type="button" class="btn btn-primary">SUBMIT</button>
+      <button type="submit" class="btn btn-primary">SUBMIT</button>
     </form>
   </div>
 </template>
@@ -52,11 +44,46 @@
     name: 'Medication',
     data() {
       return {
-
         form: {
-          patientName: '',
+          patientName : '',
+          height: '',
+          weight: '',
+          allergies: '',
+          immunizationHistory: '',
+          illnessHistory: '',
         },
-        patientName: [{ text: 'Yuslinda Nehe', value: 0 }, { text: 'Jimmy Ang', value: 2},{ text: 'John Young', value: 3}, { text: 'Ryan Tjai', value: 4}, { text: 'Lisna Nehe', value: 5}]
+      }
+    },
+    async asyncData ({ $axios }) {
+      const patients = await $axios.$get(`api/patients`);
+      let data = []
+      patients.forEach((patient) => {
+        data.push({text: patient.firstName + " " + patient.lastName, value: patient.id})
+      })
+
+      return {
+        patientName : data
+      }
+    },
+    methods: {
+      async storeHealthInformation () {
+        await this.$axios.$post(`api/health-information`, {
+          patientId : this.form.patientName,
+          height : this.form.height,
+          weight : this.form.weight,
+          allergies : this.form.allergies,
+          immunizationHistory : this.form.immunizationHistory,
+          illnessHistory : this.form.illnessHistory
+        }).then((response) => {
+          alert('Thank you, Data is saved successfully')
+          this.form.height = ''
+          this.form.weight = ''
+          this.form.allergies = ''
+          this.form.immunizationHistory = ''
+          this.form.illnessHistory = ''
+        }).catch((response) => {
+          alert(response)
+        })
       }
     }
   }
