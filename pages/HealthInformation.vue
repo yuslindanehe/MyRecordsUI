@@ -42,6 +42,7 @@
 <script>
   export default {
     name: 'Medication',
+    middleware: ['patient'],
     data() {
       return {
         form: {
