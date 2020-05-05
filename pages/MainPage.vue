@@ -1,6 +1,12 @@
 <template>
   <div class="container">
-    Hello
+    <p>
+      Hello patient,
+    <br>
+      <br>
+    Welcome to MyResult! Minimize wait time at your health record appointment and reduce unnecessary
+      papers forms by taking advantage of this secure patient portal.</p>
+
   </div>
 </template>
 
