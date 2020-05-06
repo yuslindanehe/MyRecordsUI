@@ -24,7 +24,8 @@
 <script>
 export default {
   name: 'AdditionalSecurityVerification',
-  layout: 'preLogin'
+  layout: 'preLogin',
+  auth:false
 }
 </script>
 

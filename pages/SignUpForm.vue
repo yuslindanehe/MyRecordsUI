@@ -51,6 +51,9 @@
         <label for="InputPassword">Password</label>
         <input v-model = "form.password" id="InputPassword" type="text" class="form-control" aria-describedby="Password">
       </div>
+      <div class="form-group">
+        By submitting this form, you agree with our <nuxt-link to="/TermAndConditionPage">term and condition</nuxt-link>
+      </div>
         <button type="submit" class="btn btn-primary">
           SUBMIT
         </button>

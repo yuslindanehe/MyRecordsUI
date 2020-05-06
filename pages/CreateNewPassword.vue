@@ -4,12 +4,12 @@
     <p>Enter your new password. A good password uses a combination of lowercase and uppercase letters, as well as
       numbers. Avoid using a password that is easy for others to guess such as your name or phone number.<p>
     <div class="form-group">
-      <label for="InputNewPassword">New Password</label>
-      <input type="text" class="form-control" id="NewPassword" aria-describedby="NewPassword">
+      <label for="newPassword">New Password</label>
+      <input type="text" class="form-control" id="newPassword" aria-describedby="NewPassword">
     </div>
     <div class="form-group">
-      <label for="InputRetypeNewPassword">Re-type the New Password</label>
-      <input type="text" class="form-control" id="RetypeNewPassword" aria-describedby="RetypeNewPassword">
+      <label for="retypeNewPassword">Re-type the New Password</label>
+      <input type="text" class="form-control" id="retypeNewPassword" aria-describedby="RetypeNewPassword">
     </div>
     <nuxt-link to="/login">
     <button type="button" class="btn btn-primary">SUBMIT</button>
@@ -20,7 +20,8 @@
 <script>
   export default {
     name: 'AdditionalSecurityVerification',
-    layout: 'preLogin'
+    layout: 'preLogin',
+    auth: false
   }
 </script>
 

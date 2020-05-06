@@ -197,7 +197,8 @@
 <script>
 export default {
   name: 'Hipaaagreement',
-  layout: 'preLogin'
+  layout: 'preLogin',
+  auth: false
 }
 </script>
 

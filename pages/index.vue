@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <div class="container">
+    <div v-if="emailMatch === 'match'" class="alert alert-success" role="alert">
+      Thank you, your email is verified
+    </div>
     <h1 class="text-center">
       Login
     </h1>
@@ -20,15 +23,13 @@
       <nuxt-link to="/forgotPassword">
         Forgot Password or UserName
       </nuxt-link>
-    </div>
+    </div> <br/>
     <div class="text-center">
-      Do not have an account?
-    </div>
-    <nuxt-link to="/SignUpForm">
-      <button class="btn btn-block btn-link">
+      Do not have an account? <br/>
+      <nuxt-link to="/SignUpForm">
         SIGN UP NOW
-      </button>
-    </nuxt-link>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 <script>
@@ -39,7 +40,15 @@ export default {
       login: {
         email: '',
         password: ''
-      }
+      },
+      emailMatch: 'not match'
+    }
+  },
+  async asyncData ({ query, $axios}){
+    const response = await $axios.$get(`/api/emailVerification?code=${query.code}&email=${query.email}` )
+
+    return {
+      emailMatch : response
     }
   },
   methods: {

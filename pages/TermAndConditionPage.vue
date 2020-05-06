@@ -124,7 +124,7 @@
         </li>
       </ul>
     </ol> <br>
-    <nuxt-link to="/AdditionalSecurityVerification">
+    <nuxt-link to="/SignUpForm">
     <button type="button" class="btn btn-success"
             style = "width: 100%; max-width: 250px; padding: 12px; margin: auto;">ACCEPT</button>
     </nuxt-link>
@@ -137,6 +137,7 @@
 </template>
 <script>
 export default {
-  layout: 'preLogin'
+  layout: 'preLogin',
+  auth: false
 }
 </script>

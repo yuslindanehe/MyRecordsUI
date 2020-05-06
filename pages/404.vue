@@ -11,7 +11,8 @@
 <script>
 export default {
   name: '404',
-  layout: 'preLogin'
+  layout: 'preLogin',
+  auth: false,
 }
 </script>
 

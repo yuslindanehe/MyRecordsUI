@@ -31,6 +31,7 @@
 </template>
 <script>
   export default {
-    layout: 'preLogin'
+    layout: 'preLogin',
+    auth: false,
   }
 </script>
