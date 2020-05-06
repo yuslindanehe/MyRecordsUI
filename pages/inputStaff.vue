@@ -60,7 +60,8 @@
 
 <script>
   export default {
-    name: 'InputPatient'
+    name: 'InputPatient',
+    middleware: ['patient', 'nurse'],
   }
 </script>
 

@@ -28,7 +28,8 @@
       </div>
       <div class="form-group">
         <label for="InputImunizationHistory">Imunization History</label>
-        <textarea class="form-control" v-model="form.immunizationHistory" id="InputImunizationHistory" rows="3"></textarea>
+        <textarea class="form-control" v-model="form.immunizationHistory" id="InputImunizationHistory"
+                  rows="3"></textarea>
       </div>
       <div class="form-group">
         <label for="InputIIlnessHistory">Ilness History</label>
@@ -43,10 +44,10 @@
   export default {
     name: 'Medication',
     middleware: ['patient'],
-    data() {
+    data () {
       return {
         form: {
-          patientName : '',
+          patientName: '',
           height: '',
           weight: '',
           allergies: '',
@@ -56,25 +57,28 @@
       }
     },
     async asyncData ({ $axios }) {
-      const patients = await $axios.$get(`api/patients`);
+      const patients = await $axios.$get(`api/patients`)
       let data = []
       patients.forEach((patient) => {
-        data.push({text: patient.firstName + " " + patient.lastName, value: patient.id})
+        data.push({
+          text: patient.firstName + ' ' + patient.lastName,
+          value: patient.id
+        })
       })
 
       return {
-        patientName : data
+        patientName: data
       }
     },
     methods: {
       async storeHealthInformation () {
         await this.$axios.$post(`api/health-information`, {
-          patientId : this.form.patientName,
-          height : this.form.height,
-          weight : this.form.weight,
-          allergies : this.form.allergies,
-          immunizationHistory : this.form.immunizationHistory,
-          illnessHistory : this.form.illnessHistory
+          patientId: this.form.patientName,
+          height: this.form.height,
+          weight: this.form.weight,
+          allergies: this.form.allergies,
+          immunizationHistory: this.form.immunizationHistory,
+          illnessHistory: this.form.illnessHistory
         }).then((response) => {
           alert('Thank you, Data is saved successfully')
           this.form.height = ''

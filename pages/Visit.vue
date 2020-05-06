@@ -41,7 +41,8 @@
 
 <script>
 export default {
-  name: 'Visit'
+  name: 'Visit',
+  middleware: ['patient'],
 }
 </script>
 
