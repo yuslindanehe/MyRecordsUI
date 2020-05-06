@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <div v-if="emailMatch === 'match'" class="alert alert-success" role="alert">
-      Thank you, your email is verified
-    </div>
+    {{ emailMatch }}
     <h1 class="text-center">
       Login
     </h1>
@@ -41,14 +39,16 @@ export default {
         email: '',
         password: ''
       },
-      emailMatch: 'not match'
+      emailMatch: ''
     }
   },
   async asyncData ({ query, $axios}){
-    const response = await $axios.$get(`/api/emailVerification?code=${query.code}&email=${query.email}` )
+    if (typeof query.code !== "undefined" && typeof query.email !== "undefined") {
+      const response = await $axios.$get(`/api/emailVerification?code=${query.code}&email=${query.email}`)
 
-    return {
-      emailMatch : response
+      return {
+        emailMatch: response
+      }
     }
   },
   methods: {
@@ -56,6 +56,6 @@ export default {
       await this.$auth.loginWith('local', { data: this.login })
       this.$router.push('/authentication2FA')
     }
-  }
+  },
 }
 </script>
