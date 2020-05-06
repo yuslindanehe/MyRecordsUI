@@ -19,7 +19,7 @@
     <br>
     <div class="text-center">
       <nuxt-link to="/forgotPassword">
-        Forgot Password or UserName
+        Forgot Password
       </nuxt-link>
     </div> <br/>
     <div class="text-center">

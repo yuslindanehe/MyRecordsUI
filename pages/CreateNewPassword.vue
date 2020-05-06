@@ -5,11 +5,11 @@
       numbers. Avoid using a password that is easy for others to guess such as your name or phone number.<p>
     <div class="form-group">
       <label for="newPassword">New Password</label>
-      <input type="text" class="form-control" id="newPassword" aria-describedby="NewPassword">
+      <input v-model="password" type="password" class="form-control" id="newPassword" aria-describedby="NewPassword">
     </div>
     <div class="form-group">
       <label for="retypeNewPassword">Re-type the New Password</label>
-      <input type="text" class="form-control" id="retypeNewPassword" aria-describedby="RetypeNewPassword">
+      <input v-model="password2" type="password" class="form-control" id="retypeNewPassword" aria-describedby="RetypeNewPassword">
     </div>
     <nuxt-link to="/login">
     <button type="button" class="btn btn-primary">SUBMIT</button>
