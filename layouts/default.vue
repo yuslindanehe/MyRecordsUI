@@ -20,17 +20,24 @@
             <nuxt-link class="nav-link" to=/MainPage>Home <span class="sr-only">(current)</span></nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link to="/TestResult" class="nav-link">
+            <nuxt-link v-if="role === 'patient'" to="/TestResult" class="nav-link">
               Test Results
             </nuxt-link>
-          </li>
-          <li class="nav-item">
-            <nuxt-link to="/Medication" class="nav-link">
-              Medications
+            <nuxt-link v-else to="/InputTestResult" class="nav-link">
+              Input Test Results
             </nuxt-link>
           </li>
           <li class="nav-item">
-            <nuxt-link class="nav-link" to="/HealthSummary">Health Summary</nuxt-link>
+            <nuxt-link v-if="role==='patient'" to="/Medication" class="nav-link">
+              Medications
+            </nuxt-link>
+            <nuxt-link v-else to="/MedicationForm" class="nav-link">
+              Medication Form
+            </nuxt-link>
+          </li>
+          <li class="nav-item">
+            <nuxt-link v-if="role==='patient'" class="nav-link" to="/HealthSummary">Health Summary</nuxt-link>
+            <nuxt-link v-else class="nav-link" to="/HealthInformation">Health Information</nuxt-link>
           </li>
           <li class="nav-item">
             <span class="nav-link" @click="logout">Logout</span>
@@ -69,6 +76,11 @@
 
 <script>
 export default {
+  data (){
+    return{
+      role: this.$auth.user.role
+    }
+  },
   methods: {
     async logout () {
       await this.$auth.logout()

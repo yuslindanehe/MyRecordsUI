@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <p>
-      Hello patient,
+      Hello {{ name }},
     <br>
       <br>
     Welcome to MyResult! Minimize wait time at your health record appointment and reduce unnecessary
@@ -16,6 +16,11 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'MainPage',
   middleware: ['authenticated2fa'],
+  data(){
+    return {
+      name: this.$auth.user.name
+    }
+  },
   computed: {
     ...mapGetters(['isAuthenticated', 'loggedInUser'])
   }
